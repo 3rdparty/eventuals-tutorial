@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - "artur.add-dev-tools"
+  pull_request:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build all examples
+        run: bazel build ...
+        shell: bash
