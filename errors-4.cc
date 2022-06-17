@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   auto e = []() {
     return Just("hello")
         | Raise(std::runtime_error("Oh no!"))
-        | Finally([](Expected::Of<const char*> expected) {
+        | Finally([](expected<const char*, std::exception_ptr> expected) {
              CHECK(!expected.has_value());
              return "world";
            });

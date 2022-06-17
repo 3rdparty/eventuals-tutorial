@@ -3,11 +3,11 @@
 
 using namespace eventuals;
 
-Expected::Of<int> SomeFunction(int i) {
+expected<int> SomeFunction(int i) {
   if (i > 100) {
-    return Unexpected(std::overflow_error("> 100"));
+    return make_unexpected("> 100");
   } else {
-    return i; // return Expected(i);
+    return i; // return expected(i);
   }
 }
 
