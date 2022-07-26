@@ -3,6 +3,7 @@
 #include "eventuals/collect.h"
 #include "eventuals/iterate.h"
 #include "eventuals/map.h"
+#include "eventuals/promisify.h"
 
 using namespace eventuals;
 

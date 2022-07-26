@@ -2,6 +2,7 @@
 #include <string>
 
 #include "eventuals/eventual.h"
+#include "eventuals/promisify.h"
 
 using namespace eventuals;
 
@@ -18,7 +19,7 @@ int main(int argc, char** argv) {
         });
   };
 
-  auto [future, k]  = Promisify("[interrupt-1]", e());
+  auto [future, k] = Promisify("[interrupt-1]", e());
 
   Interrupt interrupt;
 

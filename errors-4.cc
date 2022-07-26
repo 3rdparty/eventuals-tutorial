@@ -1,6 +1,7 @@
 #include "eventuals/expected.h"
 #include "eventuals/finally.h"
 #include "eventuals/just.h"
+#include "eventuals/promisify.h"
 #include "eventuals/raise.h"
 
 using namespace eventuals;

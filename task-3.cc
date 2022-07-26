@@ -1,6 +1,7 @@
 #include "eventuals/if.h"
 #include "eventuals/just.h"
 #include "eventuals/let.h"
+#include "eventuals/promisify.h"
 #include "eventuals/task.h"
 #include "eventuals/then.h"
 
