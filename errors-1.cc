@@ -1,4 +1,5 @@
 #include "eventuals/just.h"
+#include "eventuals/promisify.h"
 #include "eventuals/raise.h"
 
 using namespace eventuals;

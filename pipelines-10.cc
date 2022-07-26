@@ -2,6 +2,7 @@
 
 #include "eventuals/iterate.h"
 #include "eventuals/map.h"
+#include "eventuals/promisify.h"
 #include "eventuals/reduce.h"
 #include "eventuals/then.h"
 

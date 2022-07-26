@@ -1,4 +1,5 @@
 #include "eventuals/just.h"
+#include "eventuals/promisify.h"
 #include "eventuals/task.h"
 #include "eventuals/then.h"
 

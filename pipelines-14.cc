@@ -5,6 +5,7 @@
 #include "eventuals/let.h"
 #include "eventuals/loop.h"
 #include "eventuals/map.h"
+#include "eventuals/promisify.h"
 
 using namespace eventuals;
 
