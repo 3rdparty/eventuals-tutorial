@@ -1,4 +1,5 @@
 #include "eventuals/just.h"
+#include "eventuals/promisify.h"
 
 // Simplifying with a using-directive; you probably will want to use
 // using-declarations, e.g., 'using eventuals::Just'.

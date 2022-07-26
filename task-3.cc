@@ -1,6 +1,7 @@
 #include "eventuals/if.h"
 #include "eventuals/just.h"
 #include "eventuals/let.h"
+#include "eventuals/promisify.h"
 #include "eventuals/task.h"
 #include "eventuals/then.h"
 
@@ -21,7 +22,7 @@ Task::From<int>::To<std::string>::Raises<std::overflow_error> SomeFunction() {
 }
 
 int main(int argc, char** argv) {
-  CHECK_EQ("42", *(Just(42) | SomeFunction()));
+  CHECK_EQ("42", *(Just(42) >> SomeFunction()));
 
   return 0;
 }

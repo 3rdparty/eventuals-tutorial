@@ -8,7 +8,7 @@ build:windows --cxxopt="/std:c++17"
 
 build:windows --compiler="clang-cl"
 
-build:clang --action_env=CC=clang
+build --action_env=CC=clang
 
 # Allow users to add local preferences.
 try-import %workspace%/user.bazelrc

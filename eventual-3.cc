@@ -1,6 +1,7 @@
 #include <string>
 
 #include "eventuals/eventual.h"
+#include "eventuals/promisify.h"
 #include "eventuals/raise.h"
 
 using namespace eventuals;
@@ -27,7 +28,7 @@ int main(int argc, char** argv) {
         });
   };
 
-  CHECK_EQ("never slept!", *(Raise("error!") | e()));
+  CHECK_EQ("never slept!", *(Raise("error!") >> e()));
 
   return 0;
 }

@@ -1,4 +1,5 @@
 #include "eventuals/expected.h"
+#include "eventuals/promisify.h"
 #include "eventuals/then.h"
 
 using namespace eventuals;
@@ -12,7 +13,7 @@ expected<int> SomeFunction(int i) {
 }
 
 int main(int argc, char** argv) {
-  CHECK_EQ("42", *(SomeFunction(42) | Then([](int i) { return std::to_string(i); })));
+  CHECK_EQ("42", *(SomeFunction(42) >> Then([](int i) { return std::to_string(i); })));
 
   return 0;
 }

@@ -1,6 +1,7 @@
 #include <string>
 
 #include "eventuals/just.h"
+#include "eventuals/promisify.h"
 #include "eventuals/then.h"
 
 using namespace eventuals;
@@ -14,9 +15,9 @@ auto SomeFunction(const std::string& s) {
 int main(int argc, char** argv) {
   auto e = []() {
     return Just("hello")
-        | Then([](std::string&& s1) {
+        >> Then([](std::string&& s1) {
              return SomeFunction(s1)
-                 | Then([s1](int length) {
+                 >> Then([s1](int length) {
                       return std::move(s1) + " has "
                           + std::to_string(length) + " characters";
                     });

@@ -1,6 +1,7 @@
 #include <string>
 
 #include "eventuals/eventual.h"
+#include "eventuals/promisify.h"
 
 using namespace eventuals;
 
