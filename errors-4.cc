@@ -9,8 +9,10 @@ using namespace eventuals;
 int main(int argc, char** argv) {
   auto e = []() {
     return Just("hello")
-        >> Raise(std::runtime_error("Oh no!"))
-        >> Finally([](expected<const char*, std::exception_ptr> expected) {
+        >> Raise(RuntimeError("Oh no!"))
+        >> Finally([](expected<
+                       const char*,
+                       std::variant<Stopped, RuntimeError>>&& expected) {
              CHECK(!expected.has_value());
              return "world";
            });

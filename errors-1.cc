@@ -8,14 +8,14 @@ using namespace eventuals;
 int main(int argc, char** argv) {
   auto e = []() {
     return Just("hello")
-        >> Raise(std::runtime_error("Oh no!"))
+        >> Raise(RuntimeError("Oh no!"))
         >> Just("world");
   };
 
   try {
     *e();
     std::abort();
-  } catch (const std::exception& e) {
+  } catch (const TypeErasedError& e) {
     CHECK_STREQ("Oh no!", e.what());
   }
 

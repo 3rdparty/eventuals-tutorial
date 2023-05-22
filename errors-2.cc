@@ -8,9 +8,9 @@ using namespace eventuals;
 int main(int argc, char** argv) {
   auto e = []() {
     return Just("hello")
-        >> Raise(std::runtime_error("Oh no!"))
+        >> Raise(RuntimeError("Oh no!"))
         >> Catch()
-               .raised<std::runtime_error>([](std::runtime_error&& e) {
+               .raised<RuntimeError>([](RuntimeError&& e) {
                  CHECK_STREQ("Oh no!", e.what());
                  return Just("world");
                });
