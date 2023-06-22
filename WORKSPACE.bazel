@@ -8,10 +8,10 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "com_github_3rdparty_eventuals",
-    commit = "3b10964b7e36b7ed86ba58947e32cb31c716b44c",
+    commit = "bd069798c178a6290afe93f1fb2b52d3e2a9666e",
     recursive_init_submodules = True,
     remote = "https://github.com/3rdparty/eventuals",
-    shallow_since = "1686751959 +0000",
+    shallow_since = "1687397630 -1000",
 )
 
 load("@com_github_3rdparty_eventuals//bazel:submodules.bzl", eventuals_submodules = "submodules")
